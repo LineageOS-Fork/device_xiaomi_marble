@@ -30,3 +30,6 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
+
+#basic call recorder    
+$(call inherit-product, vendor/bcr/bcr.mk)
