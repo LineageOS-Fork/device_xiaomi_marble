@@ -7,6 +7,9 @@
 # NFC
 TARGET_NFC_SUPPORTED_SKUS := marble
 
+# Dolby Support
+TARGET_USES_MIUI_DOLBY := true
+
 # Inherit from xiaomi sm8450-common
 $(call inherit-product, device/xiaomi/sm8450-common/common.mk)
 
