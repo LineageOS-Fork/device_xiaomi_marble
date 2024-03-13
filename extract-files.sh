@@ -20,6 +20,9 @@ function blob_fixup() {
         vendor/lib64/hw/vendor.xiaomi.sensor.citsensorservice@2.0-impl.so)
             sed -i 's/_ZN13DisplayConfig10ClientImpl13ClientImplGetENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEPNS_14ConfigCallbackE/_ZN13DisplayConfig10ClientImpl4InitENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEPNS_14ConfigCallbackE\x0\x0\x0\x0\x0\x0\x0\x0\x0\x0/g' "${2}"
             ;;
+        vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service | vendor/lib*/libstagefrightdolby.so | vendor/lib*/libstagefright_soft_*.so | vendor/lib*/libdlbdsservice.so)
+            "${PATCHELF}" --add-needed "libstagefright_foundation-v33-dolby.so" "${2}"
+            ;;    
     esac
 }
 
